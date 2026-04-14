@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = clickableImg.getAttribute('data-id');
         const p = id !== null ? professionals[id] : null;
 
+        const modalImgDesktop = document.getElementById('modal-img-desktop');
+        const modalImgMobile = document.getElementById('modal-img-mobile');
+
         if (modalImgDesktop) {
           modalImgDesktop.src = clickableImg.src;
           modalImgDesktop.style.objectPosition = p ? (p.objectPosition || 'center') : 'center';
