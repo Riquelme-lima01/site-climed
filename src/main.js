@@ -77,11 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = clickableImg.getAttribute('data-id');
         const p = id !== null ? professionals[id] : null;
 
-        const modalImgDesktop = document.getElementById('modal-img-desktop');
-        const modalImgMobile = document.getElementById('modal-img-mobile');
-        
-        if (modalImgDesktop) modalImgDesktop.src = clickableImg.src;
-        if (modalImgMobile) modalImgMobile.src = clickableImg.src;
+        if (modalImgDesktop) {
+          modalImgDesktop.src = clickableImg.src;
+          modalImgDesktop.style.objectPosition = p ? (p.objectPosition || 'center') : 'center';
+        }
+        if (modalImgMobile) {
+          modalImgMobile.src = clickableImg.src;
+          modalImgMobile.style.objectPosition = p ? (p.objectPosition || 'center') : 'center';
+        }
         
         if (p) {
           const titleEl = document.getElementById('modal-title');
@@ -245,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
       specialty: "Angiologia / Cirurgia Vascular", 
       category: "Especialidades Médicas", 
       img: "/dra-taissa.jpg",
+      objectPosition: "top",
       details: "<p class='mb-2 text-climed-navy'><strong>Especializada no tratamento de varizes.</strong></p><ul class='list-disc pl-5 space-y-2 text-climed-navy'><li>Graduada em Medicina e Residência Médica em Cirurgia Vascular.</li><li>Utiliza tratamentos modernos e minimamente invasivos para melhorar a circulação e o bem-estar de cada paciente.</li></ul>"
     },
     { 
@@ -336,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ${linkWrapperStart}
               ${isLink ? '<div class="absolute top-2 right-2 bg-climed-gold text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full z-10 animate-pulse">NOVO GUIA</div>' : ''}
               <div class="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-4 md:mb-6 mx-auto rounded-full overflow-hidden border-2 border-climed-gold/20 shadow-premium ${!isLink ? 'cursor-pointer' : ''} group-hover:border-climed-gold/50 transition-colors shrink-0">
-                <img src="${imgSrc}" alt="${p.name}" data-id="${originalIndex}" class="w-full h-full object-cover ${!isLink ? 'clickable-image' : ''}" loading="lazy" />
+                <img src="${imgSrc}" alt="${p.name}" data-id="${originalIndex}" class="w-full h-full object-cover ${!isLink ? 'clickable-image' : ''}" style="object-position: ${p.objectPosition || 'center'};" loading="lazy" />
               </div>
               <h3 class="text-sm sm:text-lg md:text-xl font-bold text-climed-navy mb-1 leading-tight w-full" title="${p.name}">${p.name}</h3>
               <p class="${isLink ? 'text-climed-blue' : 'text-climed-gold'} font-semibold text-xs sm:text-sm md:text-sm leading-snug">${p.specialty}</p>
