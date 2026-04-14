@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saúde da Mulher & Ultrassonografia | Climed</title>
+    <meta name="description"
+        content="Acompanhamento pré-natal detalhado, ultrassonografias avançadas e cuidados integrais com a saúde da mulher na Climed." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+</head>
+
+<body class="bg-chrome-metal font-sans selection:bg-climed-gold/30">
+
+    <!-- HEADER (Igual da Home, com botão Voltar) -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md transition-all duration-300 border-b border-white/20">
+        <div class="container mx-auto px-4 md:px-8 h-20 md:h-28 flex items-center justify-between relative">
+
+            <!-- Voltar -->
+            <a href="/index.html"
+                class="flex items-center gap-2 text-climed-blue hover:text-climed-gold font-medium transition-colors z-20">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span class="hidden sm:block">Voltar para a Home</span>
+            </a>
+
+            <!-- Logo -->
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-multiply">
+                <a href="/index.html" class="block hover:opacity-90 transition">
+                    <img src="/logo-atualizada.png" alt="Climed Logo" class="h-auto max-h-16 md:max-h-20 lg:max-h-24 w-auto object-contain contrast-125 brightness-[1.05]" />
+                </a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-4 ml-auto sm:ml-0 z-20">
+                <a href="https://wa.me/5527997394242" target="_blank"
+                    class="hidden md:flex btn-primary py-2 px-4 text-sm">
+                    Agendar Exame
+                </a>
+                <a href="https://wa.me/5527997394242" target="_blank"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-climed-gold text-white shadow-premium">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION - SAÚDE DA MULHER -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 overflow-hidden bg-climed-navy">
+        <div
+            class="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1519554318711-aaf73ece6abe?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-climed-navy via-climed-navy/80 to-transparent z-0"></div>
+
+        <div class="container mx-auto px-4 md:px-8 relative z-10 text-center max-w-4xl text-white">
+            <div
+                class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-widest uppercase text-climed-gold border border-climed-gold/30 rounded-full animate-on-scroll">
+                Centro de Diagnóstico por Imagem
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold font-playfair leading-tight mb-6 animate-on-scroll"
+                style="transition-delay: 100ms">
+                Acompanhamos a <span class="text-climed-gold italic">vida</span> desde o primeiro bater de coração.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 md:mb-10 leading-relaxed max-w-2xl mx-auto animate-on-scroll"
+                style="transition-delay: 200ms">
+                Especialista em pré-natal, ultrassonografia de alto padrão e saúde integral da mulher em todas as
+                idades.
+            </p>
+        </div>
+    </section>
+
+    <!-- PERFIL DO MÉDICO -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div
+                class="max-w-5xl mx-auto bg-climed-bg rounded-3xl p-8 md:p-12 shadow-premium border border-gray-100 flex flex-col md:flex-row gap-10 items-center animate-on-scroll">
+                <div
+                    class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-climed-gold/20 shadow-xl shrink-0">
+                    <img src="/dr-marcio-piske.png" alt="Dr. Marcio Leandro Piske" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-climed-navy mb-1">Dr. Márcio Leandro Piske</h2>
+                    <p class="text-climed-gold font-semibold uppercase tracking-widest text-xs mb-4">Ginecologia,
+                        Obstetrícia e Medicina Fetal</p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-climed-navy text-white font-medium text-xs px-3 py-1 rounded-full">CRM-ES
+                            6412</span>
+                        <span
+                            class="bg-white text-climed-navy font-medium text-xs px-3 py-1 rounded-full border border-gray-200">RQE
+                            4887 (GO)</span>
+                        <span
+                            class="bg-white text-climed-navy font-medium text-xs px-3 py-1 rounded-full border border-gray-200">RQE
+                            6474 (USG)</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-climed-muted leading-relaxed mb-6">
+                        Com <strong>25 anos de atuação</strong> em Ginecologia e Obstetrícia e <strong>20 anos dedicados
+                            à área de ultrassonografia</strong>, o Dr. Márcio lidera o centro de acompanhamento
+                        pré-natal da Climed. É Especialista Titulado no CRM garantindo máxima segurança e precisão
+                        técnica.
+                    </p>
+
+                    <div
+                        class="bg-white border-l-4 border-climed-gold p-4 mb-6 rounded-r-xl shadow-sm text-sm text-climed-navy">
+                        <span class="font-bold block mb-1">Convênios e Atendimentos:</span>
+                        Atendemos consultas particulares, convênios <strong>Unimed</strong> e <strong>CASP</strong>,
+                        além de consórcios com prefeituras pelo <strong>SUS</strong>.
+                    </div>
+
+                    <a href="https://wa.me/5527997394242" target="_blank"
+                        class="inline-flex items-center gap-2 text-climed-blue font-bold hover:text-climed-gold transition-colors">
+                        Agendar consulta com o Especialista ->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇO DE ULTRASSONOGRAFIA COMPLETO -->
+    <section class="py-16 md:py-24 bg-white relative border-b border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-16 animate-on-scroll">
+                <span class="text-climed-gold font-bold tracking-widest uppercase text-sm mb-4 block">Portfólio
+                    Completo</span>
+                <h2 class="text-3xl md:text-5xl font-bold text-climed-navy mb-6">Nosso Catálogo de Exames</h2>
+                <p class="text-lg text-climed-muted leading-relaxed">
+                    Realizamos todas as ultrassonografias disponíveis no rol de solicitações médicas, com equipamentos
+                    de última geração para proporcionar o melhor diagnóstico para você e sua família.
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16 px-4 animate-on-scroll">
+                <!-- Card 1 -->
+                <div
+                    class="bg-climed-bg p-6 md:p-8 rounded-3xl border border-gray-100 hover:shadow-premium transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-white text-climed-gold rounded-full flex items-center justify-center mb-6 shadow-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-climed-navy mb-3">Saúde da Mulher & Fetal</h3>
+                    <ul class="space-y-2 text-climed-muted text-sm">
+                        <li>• Obstétrica Simples e com Doppler</li>
+                        <li>• Obstétrica Morfológica (1º e 2º Tri)</li>
+                        <li>• Translucência Nucal (TN)</li>
+                        <li>• Controle de Ovulação</li>
+                        <li>• Mama</li>
+                        <li>• Endovaginal</li>
+                    </ul>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-climed-bg p-6 md:p-8 rounded-3xl border border-gray-100 hover:shadow-premium transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-white text-climed-blue rounded-full flex items-center justify-center mb-6 shadow-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-climed-navy mb-3">Abdome e Pelve</h3>
+                    <ul class="space-y-2 text-climed-muted text-sm">
+                        <li>• Abdominal Total</li>
+                        <li>• Vias Urinárias</li>
+                        <li>• Próstata (Transabdominal e Transretal)</li>
+
+                    </ul>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-climed-bg p-6 md:p-8 rounded-3xl border border-gray-100 hover:shadow-premium transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-white text-climed-blue rounded-full flex items-center justify-center mb-6 shadow-sm">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-climed-navy mb-3">Medicina Interna & Partes</h3>
+                    <ul class="space-y-2 text-climed-muted text-sm">
+                        <li>• Tireoide e Cervical</li>
+                        <li>• Articulações e Pequenas Partes</li>
+                        <li>• Testículos</li>
+                        <li>• Carótidas e Doppler Vascular (Membros)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3D/4D/5D Highlight Banner -->
+            <div
+                class="bg-gradient-to-r from-climed-navy to-climed-blue rounded-3xl p-8 md:p-12 text-center text-white shadow-premium max-w-5xl mx-auto animate-on-scroll relative overflow-hidden">
+                <div
+                    class="absolute inset-0 z-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1581595220892-b072c448109d?q=80&w=2669&auto=format&fit=crop')] bg-cover">
+                </div>
+                <div class="absolute inset-0 z-0 bg-climed-navy/30"></div>
+                <div class="relative z-10">
+                    <span
+                        class="inline-block bg-climed-gold text-white px-4 py-1.5 rounded-full text-xs font-bold mb-4 uppercase tracking-wider">Altíssima
+                        Tecnologia</span>
+                    <h3 class="text-3xl md:text-5xl font-playfair font-bold mb-4">Modo 3D • 4D • 5D</h3>
+                    <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-6">Realizamos exames obstétricos avançados que
+                        constroem uma imagem bastante realística do seu bebê, permitindo que você veja suas feições
+                        antes mesmo do nascimento.</p>
+                    <a href="https://wa.me/5527997394242" target="_blank"
+                        class="btn-primary py-3 px-8 text-sm inline-block shadow-lg hover:-translate-y-1 transition-transform">Agendar
+                        Ultrassom 5D</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE DO PRÉ-NATAL -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-white to-climed-bg relative">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold text-climed-navy mb-6">Seu Guia de Pré-Natal</h2>
+                <p class="text-lg text-climed-muted leading-relaxed">
+                    Parabéns! Você está grávida. Nossa equipe preparou um mapa passo a passo com os principais exames
+                    ultrassonográficos sugeridos para as 40 semanas de gestação.
+                </p>
+            </div>
+
+            <div class="relative wrap overflow-hidden p-4 md:p-10 h-full">
+                <!-- Linha Central -->
+                <div
+                    class="border-2-2 absolute border-opacity-20 border-climed-navy h-full border left-6 md:left-1/2 transform -translate-x-1/2">
+                </div>
+
+                <!-- CARD 1 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline animate-on-scroll">
+                    <div class="order-1 md:w-5/12 hidden md:flex"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-climed-gold shadow-xl w-10 h-10 md:w-12 md:h-12 rounded-full absolute left-6 md:left-1/2 transform -translate-x-1/2 border-4 border-white">
+                        <h1 class="mx-auto font-bold text-white text-base md:text-lg">1</h1>
+                    </div>
+                    <div
+                        class="order-1 bg-white rounded-2xl shadow-premium border border-gray-100 w-[calc(100%-3.5rem)] md:w-5/12 px-4 py-4 md:px-6 md:py-6 ml-auto md:ml-auto">
+                        <h3 class="mb-2 font-bold text-2xl text-climed-navy">6 a 8 Semanas</h3>
+                        <p class="text-sm text-climed-gold font-bold uppercase tracking-wide mb-3">1º Trimestre
+                            (Endovaginal)</p>
+                        <p class="text-climed-muted leading-snug">Exame essencial para confirmar a gestação, verificar a
+                            quantidade de embriões, saber se no útero ou nas trompas e para a datação exata da sua
+                            gravidez.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline animate-on-scroll">
+                    <div class="order-1 md:w-5/12 hidden md:flex"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-climed-gold shadow-xl w-10 h-10 md:w-12 md:h-12 rounded-full absolute left-6 md:left-1/2 transform -translate-x-1/2 border-4 border-white">
+                        <h1 class="mx-auto text-white font-bold text-base md:text-lg">2</h1>
+                    </div>
+                    <div
+                        class="order-1 bg-white rounded-2xl shadow-premium border border-gray-100 w-[calc(100%-3.5rem)] md:w-5/12 px-4 py-4 md:px-6 md:py-6 ml-auto md:mr-auto">
+                        <h3 class="mb-2 font-bold text-2xl text-climed-navy">11 a 13 Semanas</h3>
+                        <p class="text-sm text-climed-gold font-bold uppercase tracking-wide mb-3">MORFOLÓGICO DE 1º
+                            TRIMESTRE
+                        </p>
+
+
+                        <p class="text-climed-muted leading-snug">Mede a Translucência Nucal (previsão de Síndrome de
+                            Down) e utiliza o Doppler de artérias uterinas para prever e prevenir a pré-eclâmpsia além
+                            de detecção de defeitos morfológicos iniciais.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline animate-on-scroll">
+                    <div class="order-1 md:w-5/12 hidden md:flex"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-climed-gold shadow-xl w-10 h-10 md:w-12 md:h-12 rounded-full absolute left-6 md:left-1/2 transform -translate-x-1/2 border-4 border-white">
+                        <h1 class="mx-auto font-bold text-white text-base md:text-lg">3</h1>
+                    </div>
+                    <div
+                        class="order-1 bg-white rounded-2xl shadow-premium border border-gray-100 w-[calc(100%-3.5rem)] md:w-5/12 px-4 py-4 md:px-6 md:py-6 ml-auto md:ml-auto">
+                        <h3 class="mb-2 font-bold text-2xl text-climed-navy">14 a 15 Semanas</h3>
+                        <p class="text-sm text-climed-gold font-bold uppercase tracking-wide mb-3">Ultrassonografia
+                            Sexagem</p>
+                        <p class="text-climed-muted leading-snug">O momento de grande emoção para a família: determinar
+                            definitivamente o sexo fetal através do exame de imagem.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div
+                    class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline animate-on-scroll">
+                    <div class="order-1 md:w-5/12 hidden md:flex"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-climed-gold shadow-xl w-10 h-10 md:w-12 md:h-12 rounded-full absolute left-6 md:left-1/2 transform -translate-x-1/2 border-4 border-white">
+                        <h1 class="mx-auto text-white font-bold text-base md:text-lg">4</h1>
+                    </div>
+                    <div
+                        class="order-1 bg-white rounded-2xl shadow-premium border border-gray-100 w-[calc(100%-3.5rem)] md:w-5/12 px-4 py-4 md:px-6 md:py-6 ml-auto md:mr-auto">
+                        <h3 class="mb-2 font-bold text-2xl text-climed-navy">22 a 24 Semanas</h3>
+                        <p class="text-sm text-climed-gold font-bold uppercase tracking-wide mb-3">MORFOLÓGICO DE 2º
+                            TRIMESTRE COM DOPPLER</p>
+                        <p class="text-climed-muted leading-snug">O exame mais importante e completo. Detecta
+                            malformações e pode incluir a medição do colo uterino via endovaginal (prevenção do parto
+                            prematuro).</p>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline animate-on-scroll">
+                    <div class="order-1 md:w-5/12 hidden md:flex"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-climed-gold shadow-xl w-10 h-10 md:w-12 md:h-12 rounded-full absolute left-6 md:left-1/2 transform -translate-x-1/2 border-4 border-white">
+                        <h1 class="mx-auto font-bold text-white text-base md:text-lg">5</h1>
+                    </div>
+                    <div
+                        class="order-1 bg-white rounded-2xl shadow-premium border border-gray-100 w-[calc(100%-3.5rem)] md:w-5/12 px-4 py-4 md:px-6 md:py-6 ml-auto md:ml-auto">
+                        <h3 class="mb-2 font-bold text-2xl text-climed-navy">28 a 32 Semanas</h3>
+                        <p class="text-sm text-climed-gold font-bold uppercase tracking-wide mb-3">OBSTÉTRICA COM
+                            DOPPLER
+                        </p>
+                        <p class="text-climed-muted leading-snug">Avalia detalhadamente o fluxo sanguíneo fetal e o
+                            suprimento da mãe para o bebê atestando o crescimento saudável e o bem-estar fetal no
+                            terceiro trimestre.</p>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div
+                    class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline animate-on-scroll">
+                    <div class="order-1 md:w-5/12 hidden md:flex"></div>
+                    <div
+                        class="z-20 flex items-center order-1 bg-climed-gold shadow-xl w-10 h-10 md:w-12 md:h-12 rounded-full absolute left-6 md:left-1/2 transform -translate-x-1/2 border-4 border-white">
+                        <h1 class="mx-auto text-white font-bold text-base md:text-lg">6</h1>
+                    </div>
+                    <div
+                        class="order-1 bg-white rounded-2xl shadow-premium border border-gray-100 w-[calc(100%-3.5rem)] md:w-5/12 px-4 py-4 md:px-6 md:py-6 ml-auto md:mr-auto">
+                        <h3 class="mb-2 font-bold text-2xl text-climed-navy">36 a 37 Semanas</h3>
+                        <p class="text-sm text-climed-gold font-bold uppercase tracking-wide mb-3">Doppler Final</p>
+                        <p class="text-climed-muted leading-snug">Avaliação final do peso fetal, posição que o bebê vai
+                            nascer e quantidade de líquido amniótico antes da chegada ao mundo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DICAS DE OURO E MITOS -->
+    <section class="py-16 bg-white relative">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-climed-navy text-white rounded-3xl p-8 md:p-12 shadow-premium animate-on-scroll">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-climed-gold">Orientações Essenciais da Climed</h2>
+                <ul class="space-y-6 text-gray-200">
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">📓</span>
+                        <p><strong>Cartão da Gestante:</strong> Toda gestante terá seu cartão presencial. Ele funciona
+                            como o documento oficial do bebê. Leve-o sempre nas consultas e sempre ande com ele.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">🩺</span>
+                        <p><strong>Exames Adicionais:</strong> Seu obstetra tem autonomia para solicitar exames além dos
+                            listados acima. Sangramento vaginal ou outros sintomas podem exigir USGs complementares.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">👶</span>
+                        <p><strong>Tipo de Parto:</strong> As indicações ou contra-indicações (Normal ou Cesárea) são
+                            orientadas pelo seu obstetra. Nunca serão definidas unicamente pela competência da
+                            ultrassonografia.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-2xl">💡</span>
+                        <p><strong>Desmentindo Mitos:</strong> Mantenha atividade física durante a gestação (se houver
+                            liberação). Evite crenças como "cordão enrolado no pescoço estrangula" ou "bebê cabeludo dá
+                            azia" – confie na ciência.</p>
+                    </li>
+                </ul>
+
+                <!-- NEW APPOINTMENT GUIDELINES -->
+                <div class="mt-12 p-6 md:p-8 bg-white/5 rounded-2xl border border-white/10">
+                    <h3 class="text-2xl font-bold text-climed-gold mb-6 flex items-center gap-3">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Orientações para o Agendamento
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-200">
+                        <div class="flex items-start gap-3">
+                            <span class="text-climed-gold mt-1">✓</span>
+                            <p class="text-sm md:text-base"><strong>Abdome Total e afins:</strong> Alguns tipos de exame
+                                de abdome exigem jejum e preparo intestinal prévio para a melhor visibilização dos
+                                órgãos.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-climed-gold mt-1">✓</span>
+                            <p class="text-sm md:text-base"><strong>Vias Urinárias e Pélvica:</strong> Outros exames
+                                precisam obrigatoriamente ser realizados com a bexiga bem cheia.</p>
+                        </div>
+                        <div class="flex items-start gap-3 md:col-span-2">
+                            <span class="text-climed-gold mt-1">✓</span>
+                            <p class="text-sm md:text-base"><strong>Gestantes:</strong> Devem sempre estar bem
+                                alimentadas antes do exame! Isso faz com que o bebê se movimente durante a
+                                ultrassonografia, facilitando as imagens vitais e a verificação morfológica.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-white/10 text-center">
+                        <p class="text-sm text-gray-300 font-medium italic">A nossa secretária poderá auxiliar
+                            detalhadamente em todo este processo e orientar o preparo exato para o seu exame marcado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LINKS ÚTEIS / BIBLIOTECA DA SAÚDE -->
+    <section class="py-16 md:py-24 bg-climed-bg border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-on-scroll">
+                <span class="text-climed-navy font-bold tracking-widest uppercase text-sm mb-4 block">Informação que
+                    Cura</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-climed-navy mb-4">Biblioteca da Mulher</h2>
+                <p class="text-climed-muted text-lg max-w-2xl mx-auto">Separamos portais oficiais e seguros para você
+                    sanar suas curiosidades e ler sobre saúde feminina e prevenção.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Card Link 1 -->
+                <a href="https://www.gov.br/saude/pt-br" target="_blank"
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-premium border border-gray-100 transition-all duration-300 group animate-on-scroll">
+                    <div
+                        class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-.586-1.414l-4.5-4.5A2 2 0 0012.586 3H12">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-climed-navy mb-2">Ministério da Saúde</h3>
+                    <p class="text-climed-muted text-sm mb-4 line-clamp-2">Acesso a campanhas de vacinação (CDV),
+                        cartilhas para gestantes e protocolos oficiais do Brasil.</p>
+                    <span
+                        class="text-climed-gold font-bold text-sm uppercase tracking-wider flex items-center gap-1">Acessar
+                        Portal <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg></span>
+                </a>
+
+                <!-- Card Link 2 -->
+                <a href="https://www.gov.br/inca/pt-br/assuntos/gestor-e-profissional-de-saude/controle-do-cancer-de-mama"
+                    target="_blank"
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-premium border border-gray-100 transition-all duration-300 group animate-on-scroll">
+                    <div
+                        class="w-12 h-12 bg-pink-50 text-pink-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-climed-navy mb-2">Instituto INCA</h3>
+                    <p class="text-climed-muted text-sm mb-4 line-clamp-2">Entenda a importância da ultrassonografia de
+                        mamas e diretrizes oficiais sobre o câncer de colo de útero.</p>
+                    <span
+                        class="text-climed-gold font-bold text-sm uppercase tracking-wider flex items-center gap-1">Acessar
+                        Portal <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg></span>
+                </a>
+
+                <!-- Card Link 3 -->
+                <a href="https://www.febrasgo.org.br/pt/" target="_blank"
+                    class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-premium border border-gray-100 transition-all duration-300 group animate-on-scroll">
+                    <div
+                        class="w-12 h-12 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-climed-navy mb-2">Febrasgo</h3>
+                    <p class="text-climed-muted text-sm mb-4 line-clamp-2">Federação de Ginecologia Brasileira.
+                        Recomendações atualizadas para gestantes e tentantes.</p>
+                    <span
+                        class="text-climed-gold font-bold text-sm uppercase tracking-wider flex items-center gap-1">Acessar
+                        Portal <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-climed-navy text-white py-12 md:py-20 border-t border-white/5">
+        <div class="container mx-auto px-4">
+            <div class="border-t border-white/10 pt-10 text-center text-gray-500 text-sm tracking-wide">
+                <p>&copy; 2024 Climed. Excelência em Saúde Familiar.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
