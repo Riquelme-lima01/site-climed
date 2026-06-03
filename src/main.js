@@ -82,10 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (modalImgDesktop) {
           modalImgDesktop.src = clickableImg.src;
+          modalImgDesktop.alt = p ? `Foto em alta resolução do(a) profissional ${p.fullName || p.name}` : 'Profissional';
           modalImgDesktop.style.objectPosition = p ? (p.objectPosition || 'center') : 'center';
         }
         if (modalImgMobile) {
           modalImgMobile.src = clickableImg.src;
+          modalImgMobile.alt = p ? `Foto em alta resolução do(a) profissional ${p.fullName || p.name}` : 'Profissional';
           modalImgMobile.style.objectPosition = p ? (p.objectPosition || 'center') : 'center';
         }
         
@@ -338,12 +340,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Added max-w-sm constraints to keep it nicely proportioned 
         const originalIndex = professionals.indexOf(p);
+        const altText = p.category === 'Serviços e Exames'
+          ? `${p.name} - Vacinas em São Gabriel da Palha - ES na Climed`
+          : `Foto do(a) ${p.fullName || p.name}, especialista em ${p.specialty} na clínica Climed em São Gabriel da Palha - ES`;
+
         const cardHTML = `
           <div class="card-premium group flex flex-col items-center text-center opacity-0 translate-y-4 transition-all duration-500 relative ${isLink ? 'ring-2 ring-climed-gold/50 cursor-pointer hover:-translate-y-2' : ''}" style="transition-delay: ${i * 30}ms">
             ${linkWrapperStart}
               ${isLink ? '<div class="absolute top-2 right-2 bg-climed-gold text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full z-10 animate-pulse">NOVO GUIA</div>' : ''}
               <div class="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 mb-4 md:mb-6 mx-auto rounded-full overflow-hidden border-2 border-climed-gold/20 shadow-premium ${!isLink ? 'cursor-pointer' : ''} group-hover:border-climed-gold/50 transition-colors shrink-0">
-                <img src="${imgSrc}" alt="${p.name}" data-id="${originalIndex}" class="w-full h-full object-cover ${!isLink ? 'clickable-image' : ''}" style="object-position: ${p.objectPosition || 'center'};" loading="lazy" />
+                <img src="${imgSrc}" alt="${altText}" data-id="${originalIndex}" class="w-full h-full object-cover ${!isLink ? 'clickable-image' : ''}" style="object-position: ${p.objectPosition || 'center'};" loading="lazy" />
               </div>
               <h3 class="text-sm sm:text-lg md:text-xl font-bold text-climed-navy mb-1 leading-tight w-full" title="${p.name}">${p.name}</h3>
               <p class="${isLink ? 'text-climed-blue' : 'text-climed-gold'} font-semibold text-xs sm:text-sm md:text-sm leading-snug">${p.specialty}</p>
