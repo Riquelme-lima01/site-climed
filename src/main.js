@@ -220,15 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
       details: "<ul class='list-disc pl-5 space-y-2 text-climed-navy'><li><strong>Graduação em Medicina:</strong> EMESCAM (Escola Superior de Ciências da Santa Casa de Misericórdia de Vitória)</li><li><strong>Residência Médica:</strong> Ortopedia e Traumatologia (Santa Casa de Misericórdia de Santos)</li><li><strong>Título de Especialista:</strong> Ortopedia e Traumatologia (SBOT) RQE 9965</li><li><strong>Subespecialização:</strong> Cirurgia do Joelho (Santa Casa de Misericórdia de Santos)</li><li><strong>Membro:</strong> Titular da SBOT (Sociedade Brasileira de Ortopedia e Traumatologia)</li></ul>"
     },
     { 
-      name: "Dra. Cristiane", 
-      fullName: "Dra. Cristiane Stoco Fadini",
-      credentials: "CRM: 9067 ES",
-      specialty: "Pediatria e Ultrassonografia", 
-      category: "Fono / Pediatria / Odonto", 
-      img: "/cristiane.jpg",
-      details: "<ul class='list-disc pl-5 space-y-2 text-climed-navy'><li><strong>Graduação em Medicina:</strong> Centro Universitário Serra dos Órgãos (Unifeso)</li><li><strong>Residência Médica:</strong> Pediatria pelo Hospital Estadual Infantil Nossa Senhora da Glória (HEINSG) – RQE 6784</li><li><strong>Pós-graduação:</strong> Ultrassonografia em Ginecologia e Obstetrícia e Medicina Interna (Sonare)</li></ul>"
-    },
-    { 
       name: "Dra. Rosana", 
       fullName: "Dra. Rosana Fornazier do Nascimento",
       credentials: "CRM: 3804-ES",
@@ -291,15 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "Fono / Pediatria / Odonto", 
       img: "/dra-natalia.jpg",
       details: "<p class='mb-2 text-climed-navy'>Sou especialista em Odontopediatria, apaixonada pelo universo infantil e por transformar cada atendimento em uma experiência leve, segura e acolhedora, não apenas para as crianças, mas também para toda a família.</p><p class='mb-2 text-climed-navy'>Minha trajetória na odontologia nasceu do propósito de cuidar com amor, respeito e escuta. Acredito que cada criança é única e merece ser atendida com paciência, carinho e um olhar verdadeiramente humanizado, construindo desde cedo uma relação positiva com a saúde bucal.</p><p class='mb-2 text-climed-navy'>Busco constantemente aliar esse cuidado acolhedor à tecnologia de ponta. Possuo habilitação em laserterapia e utilizo, na minha prática clínica, tanto o laser de baixa potência auxiliando em processos de cicatrização, alívio de dor e inflamação, o laser de alta potência, que proporciona mais precisão, conforto e segurança em procedimentos cirúrgicos, como as frenectomias.</p><p class='mb-2 text-climed-navy'>Mais do que tratar dentes, meu compromisso é promover qualidade de vida, bem-estar e desenvolvimento saudável, orientando os pais com clareza e segurança em cada etapa.</p><p class='text-climed-navy font-semibold mt-4 text-climed-gold italic'>Aqui, cada sorriso é cuidado com amor, ciência e propósito.</p>"
-    },
-    { 
-      name: "Dr. Daniel", 
-      fullName: "Daniel Caversan Bellinazzi de Andrade",
-      credentials: "CRM 19838",
-      specialty: "Médico Clínico Geral e Ultrassonografia", 
-      category: "Especialidades Médicas", 
-      img: "/dr-daniel.jpg",
-      details: "<ul class='list-disc pl-5 space-y-2 text-climed-navy'><li><strong>Graduação em medicina:</strong> UVV (Universidade Vila Velha)</li><li><strong>Pós graduado em urgência e emergência:</strong> Sanar/Cetrus - SP</li><li><strong>Pós graduando em Ultrassonografia:</strong> Sonare</li><li>Membro da SBUS (Sociedade Brasileira de Ultrassonografia) desde 2025</li><li>Monitor voluntario do curso de Ultrassonografia geral - SONARE</li><li>Coordenador medico da telemedicina na APS - ULTRATELE</li></ul>"
     },
 
     // Serviços Adicionais
