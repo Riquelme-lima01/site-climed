@@ -283,6 +283,15 @@ document.addEventListener('DOMContentLoaded', () => {
       img: "/dra-natalia.jpg",
       details: "<p class='mb-2 text-climed-navy'>Sou especialista em Odontopediatria, apaixonada pelo universo infantil e por transformar cada atendimento em uma experiência leve, segura e acolhedora, não apenas para as crianças, mas também para toda a família.</p><p class='mb-2 text-climed-navy'>Minha trajetória na odontologia nasceu do propósito de cuidar com amor, respeito e escuta. Acredito que cada criança é única e merece ser atendida com paciência, carinho e um olhar verdadeiramente humanizado, construindo desde cedo uma relação positiva com a saúde bucal.</p><p class='mb-2 text-climed-navy'>Busco constantemente aliar esse cuidado acolhedor à tecnologia de ponta. Possuo habilitação em laserterapia e utilizo, na minha prática clínica, tanto o laser de baixa potência auxiliando em processos de cicatrização, alívio de dor e inflamação, o laser de alta potência, que proporciona mais precisão, conforto e segurança em procedimentos cirúrgicos, como as frenectomias.</p><p class='mb-2 text-climed-navy'>Mais do que tratar dentes, meu compromisso é promover qualidade de vida, bem-estar e desenvolvimento saudável, orientando os pais com clareza e segurança em cada etapa.</p><p class='text-climed-navy font-semibold mt-4 text-climed-gold italic'>Aqui, cada sorriso é cuidado com amor, ciência e propósito.</p>"
     },
+    {
+      name: "Dra. Megane",
+      fullName: "Megane Larissa Dizerens",
+      credentials: "CRM: 22443 - ES",
+      specialty: "Médica",
+      category: "Especialidades Médicas",
+      img: "/dra-megane.jpg",
+      details: "<p class='mb-2 text-climed-navy'>Atendimento médico geral com foco em cuidado humanizado, prevenção e promoção da saúde integral.</p>"
+    },
 
     // Serviços Adicionais
     { name: "Clínica de Vacinação", specialty: "Vacinas para todas as idades", category: "Serviços e Exames", img: "/cdv-vacinas.png" },
