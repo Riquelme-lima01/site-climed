@@ -2,6 +2,15 @@
 <html lang="pt-BR" class="scroll-smooth">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5WZMTCGMB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-E5WZMTCGMB');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Climed</title>
@@ -42,10 +51,12 @@
             <!-- CTA Button -->
             <div class="flex items-center gap-4 ml-auto sm:ml-0 z-20">
                 <a href="https://wa.me/5527997394242" target="_blank"
+                    data-ga-event="agendar_consulta" data-ga-origem="header_ultrassom" data-ga-servico="exame_ultrassom"
                     class="hidden md:flex btn-primary py-2 px-4 text-sm">
                     Agendar Exame
                 </a>
                 <a href="https://wa.me/5527997394242" target="_blank"
+                    data-ga-event="agendar_consulta" data-ga-origem="header_mobile_ultrassom" data-ga-servico="exame_ultrassom"
                     class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-climed-gold text-white shadow-premium">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -120,6 +131,7 @@
                     </div>
 
                     <a href="https://wa.me/5527997394242" target="_blank"
+                        data-ga-event="agendar_consulta" data-ga-origem="secao_especialista_ultrassom" data-ga-servico="exame_ultrassom"
                         class="inline-flex items-center gap-2 text-climed-blue font-bold hover:text-climed-gold transition-colors">
                         Agendar consulta com o Especialista ->
                     </a>
@@ -220,6 +232,7 @@
                         constroem uma imagem bastante realística do seu bebê, permitindo que você veja suas feições
                         antes mesmo do nascimento.</p>
                     <a href="https://wa.me/5527997394242" target="_blank"
+                        data-ga-event="agendar_consulta" data-ga-origem="secao_5d_ultrassom" data-ga-servico="ultrassom_5d"
                         class="btn-primary py-3 px-8 text-sm inline-block shadow-lg hover:-translate-y-1 transition-transform">Agendar
                         Ultrassom 5D</a>
                 </div>

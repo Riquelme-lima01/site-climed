@@ -106,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const docSpecialty = p.specialty || '';
             const message = `Olá! Gostaria de agendar uma consulta com o(a) ${docName} (Especialidade: ${docSpecialty}).`;
             whatsappBtn.href = `https://wa.me/5527997394242?text=${encodeURIComponent(message)}`;
+            whatsappBtn.setAttribute('data-ga-medico', docName);
+            whatsappBtn.setAttribute('data-ga-especialidade', docSpecialty);
           }
         }
 
@@ -372,6 +374,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Rastreamento GA4: Disparo do evento agendar_consulta
+  document.body.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-ga-event="agendar_consulta"]') ||
+                   (e.target.closest('a') && e.target.closest('a').href && e.target.closest('a').href.includes('wa.me') ? e.target.closest('a') : null);
+
+    if (target) {
+      const origem = target.getAttribute('data-ga-origem') || target.getAttribute('data-origem') || 'geral';
+      const servico = target.getAttribute('data-ga-servico') || 'consulta_geral';
+      const medico = target.getAttribute('data-ga-medico') || null;
+      const especialidade = target.getAttribute('data-ga-especialidade') || null;
+
+      const eventParams = {
+        origem_clique: origem,
+        tipo_servico: servico,
+        canal_contato: 'whatsapp',
+        link_url: target.href || '',
+        page_location: window.location.href
+      };
+
+      if (medico) eventParams.medico_nome = medico;
+      if (especialidade) eventParams.especialidade = especialidade;
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'agendar_consulta', eventParams);
+        console.log('[GA4 Event]: agendar_consulta', eventParams);
+      }
+    }
+  });
 });
 
 
