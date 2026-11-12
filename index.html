@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-campaign="novembro-azul">
 
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5WZMTCGMB"></script>
@@ -14,11 +14,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clínica Médica e Exames em São Gabriel da Palha | Climed</title>
   <meta name="description"
-    content="Encontre médicos especialistas, exames e vacinas em São Gabriel da Palha - ES. Conheça a Climed e cuide da sua família com atendimento humanizado. Agende!" />
+    content="Encontre médicos especialistas e exames em São Gabriel da Palha - ES. Conheça a Climed e cuide da sua família com atendimento humanizado. Agende!" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/png" href="/logo.png" />
   <script type="application/ld+json">
@@ -30,7 +30,7 @@
     "url": "https://www.oficialclimed.com.br",
     "logo": "https://www.oficialclimed.com.br/logo-atualizada.png",
     "image": "https://www.oficialclimed.com.br/fachada-climed.jpg",
-    "description": "Clínica Climed em São Gabriel da Palha - ES. Consultas em diversas especialidades médicas, pediatria, ginecologia, odontopediatria, exames e vacinação.",
+    "description": "Clínica Climed em São Gabriel da Palha - ES. Consultas em diversas especialidades médicas, pediatria, ginecologia, odontopediatria e exames.",
     "telephone": "+55-27-99739-4242",
     "address": {
       "@type": "PostalAddress",
@@ -83,14 +83,26 @@
 
 <body class="bg-chrome-metal font-sans selection:bg-climed-gold/30">
 
+  <!-- Para encerrar a campanha: remova data-campaign="novembro-azul" do elemento <html>. -->
+  <div class="campaign-banner" data-campaign-banner hidden>
+    <span class="campaign-banner__message">
+      <svg class="campaign-ribbon" viewBox="0 0 32 40" aria-hidden="true" focusable="false">
+        <path d="M7 4h7v12L8 35l-5-2 6-17H7zM18 4h7v12l6 17-5 2-6-19z" fill="currentColor" />
+        <path d="M7 4c0 6 5 10 9 12 4-2 9-6 9-12" fill="none" stroke="currentColor" stroke-width="4" />
+      </svg>
+      <span>Novembro Azul: mês de conscientização sobre a saúde do homem</span>
+    </span>
+    <button type="button" class="campaign-banner__close" data-campaign-banner-close aria-label="Fechar faixa Novembro Azul">&times;</button>
+  </div>
+
   <!-- HEADER -->
   <header
-    class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md transition-all duration-300 border-b border-white/20">
+    class="site-header fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md transition-all duration-300 border-b border-white/20">
     <div class="container mx-auto px-4 md:px-8 h-20 md:h-28 flex items-center justify-between relative">
 
       <!-- Mobile Menu Button (Visible on Mobile) -->
-      <button id="menu-btn" class="md:hidden text-climed-blue focus:outline-none z-20">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button id="menu-btn" class="md:hidden text-climed-blue focus:outline-none z-20" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
@@ -104,10 +116,14 @@
       </nav>
 
       <!-- Logo (Absolutely Centered) -->
-      <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div class="brand-lockup absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <a href="#" class="block hover:opacity-90 transition">
-          <img src="/logo-atualizada.png" alt="Climed Logo"
+          <img src="/logo-atualizada.webp" alt="Climed Logo" width="1024" height="369" decoding="async"
             class="h-auto max-h-16 md:max-h-20 lg:max-h-24 w-auto object-contain drop-shadow-sm" />
+          <svg class="campaign-logo-ribbon" viewBox="0 0 32 40" aria-hidden="true" focusable="false">
+            <path d="M7 4h7v12L8 35l-5-2 6-17H7zM18 4h7v12l6 17-5 2-6-19z" fill="currentColor" />
+            <path d="M7 4c0 6 5 10 9 12 4-2 9-6 9-12" fill="none" stroke="currentColor" stroke-width="4" />
+          </svg>
         </a>
       </div>
 
@@ -136,12 +152,12 @@
   </header>
 
   <!-- Mobile Menu Overlay (Moved outside header to avoid constraints from backdrop-blur) -->
-  <div id="mobile-menu"
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu principal"
     class="hidden fixed inset-0 bg-white z-[100] flex flex-col p-8 transition-opacity duration-300 overflow-y-auto">
     <div class="flex justify-between items-center mb-10 shrink-0 border-b border-gray-100 pb-4">
       <!-- Logo normal -->
-      <img src="/logo-atualizada.png" alt="Climed Logo" class="h-10 w-auto object-contain" />
-      <button id="close-menu-btn"
+      <img src="/logo-atualizada.webp" alt="Climed Logo" width="1024" height="369" decoding="async" class="h-10 w-auto object-contain" />
+      <button id="close-menu-btn" aria-label="Fechar menu"
         class="text-gray-400 hover:text-climed-gold bg-gray-50 hover:bg-gray-100 transition-colors p-2 rounded-full focus:outline-none">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -176,9 +192,14 @@
   </div>
 
   <!-- HERO SECTION -->
-  <section id="inicio" class="relative pt-24 pb-12 md:pt-32 md:pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+  <section id="inicio" class="hero-section relative pt-24 pb-12 md:pt-32 md:pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <svg class="campaign-hero-ribbon" viewBox="0 0 32 40" aria-hidden="true" focusable="false">
+      <path d="M7 4h7v12L8 35l-5-2 6-17H7zM18 4h7v12l6 17-5 2-6-19z" fill="currentColor" />
+      <path d="M7 4c0 6 5 10 9 12 4-2 9-6 9-12" fill="none" stroke="currentColor" stroke-width="4" />
+    </svg>
     <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-      <div class="animate-on-scroll z-10">
+      <div class="hero-copy animate-on-scroll z-10">
+        <span class="campaign-seal" aria-hidden="true">Novembro Azul</span>
         <div
           class="inline-block px-4 py-1 mb-6 text-sm font-semibold tracking-widest uppercase text-climed-navy bg-climed-navy/5 rounded-full border border-climed-navy/20">
           Acolhimento e Excelência Médica
@@ -207,10 +228,10 @@
           </a>
         </div>
       </div>
-      <div class="relative animate-on-scroll">
+      <div class="hero-photo relative animate-on-scroll">
         <div class="absolute -inset-4 bg-climed-gold/10 rounded-full blur-3xl opacity-20"></div>
-        <div class="relative rounded-2xl overflow-hidden shadow-premium p-2 bg-white border border-gray-100">
-          <img src="/fachada-climed.jpg" alt="Atendimento humanizado Climed"
+        <div class="hero-image-shell relative rounded-2xl overflow-hidden shadow-premium p-2 bg-white border border-gray-100">
+          <img src="/fachada-climed.webp" alt="Atendimento humanizado Climed" width="1024" height="979" fetchpriority="high" decoding="async"
             class="rounded-xl object-cover w-full h-[300px] md:h-[450px] lg:h-[550px]" />
         </div>
       </div>
@@ -219,19 +240,19 @@
 
 
   <!-- INFO BAR (Destaques rápidos) -->
-  <div class="bg-climed-navy text-white py-10 md:py-16">
+  <div class="trust-band bg-climed-navy text-white py-10 md:py-16">
     <div
-      class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
-      <div class="p-6 animate-on-scroll">
-        <h3 class="text-climed-gold text-3xl md:text-4xl font-bold mb-3">+21 Anos</h3>
+      class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
+      <div class="trust-pillar p-6 animate-on-scroll">
+        <h3 class="text-climed-gold text-3xl md:text-4xl font-bold mb-3" aria-label="+21 Anos"><span data-counter-number="21">+21</span> Anos</h3>
         <p class="text-gray-400 font-medium tracking-wide uppercase text-sm">De tradição e confiança</p>
       </div>
-      <div class="p-6 animate-on-scroll">
+      <div class="trust-pillar p-6 animate-on-scroll">
         <h3 class="text-climed-gold text-3xl md:text-4xl font-bold mb-3">Expertise</h3>
         <p class="text-gray-400 font-medium tracking-wide uppercase text-sm">Médicos especialistas em sua saúde
         </p>
       </div>
-      <div class="p-6 animate-on-scroll">
+      <div class="trust-pillar p-6 animate-on-scroll">
         <h3 class="text-climed-gold text-3xl md:text-4xl font-bold mb-3">Humanidade</h3>
         <p class="text-gray-400 font-medium tracking-wide uppercase text-sm">Você e sua família sendo muito bem cuidados
         </p>
@@ -242,10 +263,10 @@
   <!-- SOBRE NÓS -->
   <section id="sobre" class="section-padding overflow-hidden">
     <div class="container mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-      <div class="order-2 md:order-1 animate-on-scroll relative">
+      <div class="story-photo order-2 md:order-1 animate-on-scroll relative">
         <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-climed-gold/10 rounded-full blur-2xl"></div>
         <div class="relative rounded-[2rem] shadow-premium p-3 bg-white border border-gray-200">
-          <img src="/equipe-climed.jpg" alt="Equipe Climed" class="rounded-3xl w-full h-auto object-cover" />
+          <img src="/equipe-climed.webp" alt="Equipe Climed" width="1024" height="682" loading="lazy" decoding="async" class="rounded-3xl w-full h-auto object-cover" />
         </div>
       </div>
       <div class="order-1 md:order-2 animate-on-scroll">
@@ -297,7 +318,7 @@
   </section>
 
   <!-- ESPECIALIDADES -->
-  <section id="especialidades" class="section-padding bg-climed-bg">
+  <section id="especialidades" class="specialties-section section-padding bg-climed-bg">
     <div class="container mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-12 md:mb-20 animate-on-scroll">
         <span class="text-climed-gold font-bold tracking-widest uppercase text-sm mb-4 block">Cuidado Integral</span>
@@ -327,7 +348,7 @@
   </section>
 
   <!-- LOCALIZAÇÃO / CONTATO -->
-  <section id="contato" class="section-padding">
+  <section id="contato" class="contact-section section-padding">
     <div class="container mx-auto">
       <div class="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-premium border border-gray-100">
         <!-- Info -->
@@ -402,7 +423,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-climed-navy text-white py-12 md:py-20 border-t border-white/5">
+  <footer class="site-footer bg-climed-navy text-white py-12 md:py-20 border-t border-white/5">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16 text-center md:text-left">
         <div class="col-span-1 md:col-span-2 text-left">
@@ -449,10 +470,10 @@
     </div>
   </footer>
   <!-- LIGHTBOX MODAL -->
-  <div id="image-modal"
+  <div id="image-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
     class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8 transition-all duration-300 opacity-0">
     <!-- Close Button -->
-    <button id="close-modal"
+    <button id="close-modal" aria-label="Fechar detalhes do profissional"
       class="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-climed-gold transition-colors z-[110] bg-black/40 hover:bg-black/80 rounded-full p-2">
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -465,7 +486,7 @@
 
       <!-- Image Area (Desktop only) -->
       <div class="hidden md:block w-full md:w-2/5 bg-climed-navy relative md:min-h-[500px] shrink-0">
-        <img id="modal-img-desktop" src="" alt="Profissional"
+        <img id="modal-img-desktop" src="" alt="Profissional" width="640" height="800" decoding="async"
           class="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
         <!-- Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-climed-navy/30"></div>
@@ -481,7 +502,7 @@
             class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-climed-gold/20 shadow-premium bg-climed-navy relative hover:border-climed-gold/50 transition-colors cursor-pointer"
             onclick="window.open(document.getElementById('modal-img-mobile').src, '_blank')"
             title="Clique para ver a foto original">
-            <img id="modal-img-mobile" src="" alt="Profissional"
+            <img id="modal-img-mobile" src="" alt="Profissional" width="320" height="320" decoding="async"
               class="absolute inset-0 w-full h-full object-cover object-center" />
           </div>
         </div>
@@ -510,6 +531,14 @@
       </div>
     </div>
   </div>
+
+  <a class="mobile-whatsapp" href="https://wa.me/5527997394242" target="_blank"
+    data-ga-event="agendar_consulta" data-ga-origem="whatsapp_flutuante_mobile" data-ga-servico="consulta_geral"
+    aria-label="Agendar consulta pelo WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 2a9.9 9.9 0 0 0-8.57 14.86L2 22l5.34-1.4A9.9 9.9 0 1 0 12 2zm0 17.8a7.9 7.9 0 0 1-4.03-1.1l-.29-.17-3.1.81.83-3.02-.19-.31A7.9 7.9 0 1 1 12 19.8zm4.34-5.92c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.2-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.29-.74-1.77-.2-.46-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1 .4 1.34.51.56.18 1.07.15 1.47.09.45-.07 1.4-.57 1.6-1.13.2-.56.2-1.03.14-1.13-.06-.1-.22-.16-.46-.28z" />
+    </svg>
+  </a>
 
   <script type="module" src="/src/main.js"></script>
 </body>

@@ -1,119 +1,650 @@
 @import "tailwindcss";
 
+/* Brand system: default Climed palette and display/body type. */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-serif: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-climed-navy: #1B2631;
-  /* Dark Charcoal (was Navy) */
-  --color-climed-gold: #475569;
-  /* Slate accent (was Gold/Silver) */
-  --color-climed-sage: #E5E7EB;
-  /* Light Gray (was Sage) */
-  /* High contrast light silver background */
-  --color-climed-bg: #F1F5F9;
-  /* Darker Silver Base */
-  --bg-metallic-gradient: linear-gradient(135deg, #A3A2A1 0%, #6D6C6B 100%);
-  /* Gunmetal/Metallic Gradient based on #878685 */
-  --color-climed-text: #1B2631;
-  /* Near Black Text */
-  --color-climed-muted: #6B7280;
-  /* Gray Muted */
+  --color-climed-navy: #0B2545;
+  --color-climed-blue: #1E6FD9;
+  --color-climed-gold: #925222;
+  --color-climed-sage: #DCE9F8;
+  --color-climed-bg: #E8F1FC;
+  --color-climed-text: #182A40;
+  --color-climed-muted: #52647A;
 
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
-
-  --shadow-premium: 0 10px 30px -10px rgba(10, 37, 64, 0.1);
-  --shadow-premium-hover: 0 20px 40px -15px rgba(10, 37, 64, 0.15);
-
-  --animate-slide-up: slideUp 0.8s ease-out forwards;
+  --shadow-premium: 0 16px 44px -24px rgba(11, 37, 69, .28);
+  --shadow-premium-hover: 0 24px 54px -24px rgba(11, 37, 69, .38);
+  --animate-slide-up: slideUp .7s cubic-bezier(.2,.7,.2,1) forwards;
 }
+
+:root {
+  color-scheme: light;
+  --brand-navy: #0B2545;
+  --brand-blue: #1E6FD9;
+  --brand-blue-deep: #1459B5;
+  --brand-sky: #E8F1FC;
+  --brand-warm: #925222;
+  --brand-warm-soft: #F5E9DE;
+  --campaign-hero-start: #0B2545;
+  --campaign-hero-end: #1E6FD9;
+  --campaign-cta: #1559B7;
+  --campaign-ribbon: #8FC1FF;
+  --page-background: #F7FAFE;
+  --body-copy: #182A40;
+  --muted-copy: #52647A;
+  --surface: #FFFFFF;
+  --border-soft: #D9E4F0;
+  --header-height: 92px;
+  --header-compact-height: 70px;
+  --campaign-banner-height: 0px;
+  --section-space: clamp(4.5rem, 8vw, 7.5rem);
+  --radius-card: 22px;
+  --shadow-card: 0 18px 50px -30px rgba(11, 37, 69, .32);
+  --shadow-card-hover: 0 26px 58px -28px rgba(11, 37, 69, .4);
+}
+
+html[data-campaign="novembro-azul"] {
+  --brand-blue: #1E6FD9;
+  --brand-blue-deep: #1559B7;
+  --brand-warm: #DBA375;
+  --campaign-banner-height: 42px;
+}
+
+html.campaign-banner-dismissed { --campaign-banner-height: 0px; }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + var(--campaign-banner-height) + 1rem);
   }
 
   body {
-    background: var(--bg-metallic-gradient);
-    @apply text-climed-text font-sans antialiased min-h-screen;
-    background-attachment: fixed;
+    min-width: 320px;
+    background: var(--page-background);
+    color: var(--body-copy);
+    @apply font-sans antialiased selection:bg-climed-blue/20;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  .font-serif {
-    @apply font-serif;
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-display);
+    letter-spacing: -.035em;
+  }
+
+  a, button, iframe {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a, button {
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 3px solid #1E6FD9;
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    color: #0B2545;
+    background: #C9DDF8;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-16;
+    padding-block: var(--section-space);
+    @apply px-4 md:px-8 lg:px-16;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-climed-navy text-white font-semibold rounded-full transition-all duration-300 hover:bg-climed-gold hover:shadow-lg hover:-translate-y-1 active:scale-95;
+    min-height: 48px;
+    color: #fff;
+    background: var(--brand-blue-deep);
+    box-shadow: 0 12px 26px -14px rgba(21, 89, 183, .65);
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-navy);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-climed-navy text-climed-navy font-semibold rounded-full transition-all duration-300 hover:bg-climed-navy hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95;
+    min-height: 48px;
+    color: var(--brand-navy);
+    background: rgba(255,255,255,.82);
+    border: 1px solid rgba(11,37,69,.2);
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 font-semibold transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    color: var(--brand-blue-deep);
+    border-color: var(--brand-blue);
+    background: #fff;
+    transform: translateY(-2px);
   }
 
   .card-premium {
-    @apply bg-white p-4 md:p-8 rounded-2xl border border-gray-100 shadow-premium transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-2;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-card);
+    @apply rounded-2xl p-4 transition-all duration-300 md:p-6;
   }
 
-  .icon-box {
-    @apply w-16 h-16 bg-climed-bg rounded-xl flex items-center justify-center text-climed-navy mb-6 transition-colors duration-300 group-hover:bg-climed-sage/10 group-hover:text-climed-sage;
+  .card-premium:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(30,111,217,.42);
+    transform: translateY(-4px);
   }
 }
+
+/* Site canvas and consistent page width. */
+.bg-chrome-metal {
+  background: var(--page-background);
+  box-shadow: none;
+}
+
+.container {
+  width: min(100% - 2rem, 1240px);
+}
+
+/* Sticky header and campaign ribbon. */
+.site-header {
+  top: var(--campaign-banner-height);
+  background: rgba(255,255,255,.94);
+  border-bottom: 1px solid rgba(217,228,240,.9);
+  box-shadow: 0 6px 24px -22px rgba(11,37,69,.45);
+  transition: top .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.site-header > .container {
+  height: var(--header-height);
+  transition: height .25s ease;
+}
+
+.site-header.is-compact {
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 10px 32px -24px rgba(11,37,69,.55);
+}
+
+.site-header.is-compact > .container {
+  height: var(--header-compact-height);
+}
+
+.brand-lockup img {
+  max-height: 72px;
+  transition: max-height .25s ease;
+}
+
+.site-header.is-compact .brand-lockup img {
+  max-height: 58px;
+}
+
+.campaign-logo-ribbon {
+  display: none;
+  position: absolute;
+  top: 1px;
+  right: -24px;
+  width: 17px;
+  height: 22px;
+  color: var(--brand-blue);
+  filter: drop-shadow(0 2px 4px rgba(11,37,69,.18));
+}
+
+.campaign-banner {
+  position: fixed;
+  z-index: 60;
+  inset: 0 0 auto;
+  display: flex;
+  min-height: var(--campaign-banner-height);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: .45rem 3rem;
+  color: #fff;
+  background: linear-gradient(90deg, #0B2545, #1459B5);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.campaign-banner[hidden] { display: none; }
+
+.campaign-banner__message {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  text-align: center;
+}
+
+.campaign-ribbon {
+  width: 19px;
+  height: 25px;
+  flex: none;
+  color: #8FC1FF;
+}
+
+.campaign-banner__close {
+  position: absolute;
+  right: max(1rem, calc((100vw - 1240px) / 2));
+  top: 50%;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.campaign-banner__close:hover { background: rgba(255,255,255,.16); }
+
+/* Hero: image treatment, hierarchy and November Azul visual layer. */
+.hero-section {
+  isolation: isolate;
+  min-height: min(760px, 90vh);
+  background: linear-gradient(135deg, #fff 0%, #F3F8FE 66%, #E8F1FC 100%);
+}
+
+.hero-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-copy h1 {
+  max-width: 13ch;
+  font-size: clamp(2.25rem, 4.2vw, 4.45rem);
+  line-height: 1.08;
+  letter-spacing: -.055em;
+}
+
+.hero-copy { position: relative; }
+
+.hero-copy > p:not(.font-serif) {
+  color: var(--muted-copy);
+  max-width: 38rem;
+}
+
+.hero-copy > div:first-of-type {
+  color: var(--brand-blue-deep);
+  background: #EAF2FC;
+  border-color: #D2E2F6;
+  border-radius: 999px;
+  letter-spacing: .09em;
+}
+
+.hero-photo { isolation: isolate; }
+
+.hero-image-shell {
+  border-radius: 26px;
+  border-color: rgba(255,255,255,.85);
+  box-shadow: 0 28px 68px -38px rgba(11,37,69,.55);
+}
+
+.hero-image-shell img {
+  filter: saturate(.9) contrast(1.02);
+  border-radius: 19px;
+}
+
+html[data-campaign="novembro-azul"] .hero-image-shell::after {
+  position: absolute;
+  z-index: 1;
+  inset: .65rem;
+  border-radius: 19px;
+  background: linear-gradient(135deg, rgba(11,37,69,.38), rgba(30,111,217,.05) 68%);
+  content: "";
+  pointer-events: none;
+}
+
+.campaign-hero-ribbon,
+.campaign-seal { display: none; }
+
+/* Trust pillars are presented as three calm, equal cards. */
+.trust-band {
+  position: relative;
+  z-index: 2;
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  background: var(--brand-navy);
+}
+
+.trust-band > .container { align-items: stretch; }
+
+.trust-pillar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 150px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: var(--radius-card);
+  background: rgba(255,255,255,.055);
+  transition: background .25s ease, transform .25s ease, border-color .25s ease;
+}
+
+.trust-pillar:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.1);
+  border-color: rgba(143,193,255,.5);
+}
+
+.trust-pillar h3 {
+  color: #C6DDF8;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.trust-pillar p {
+  color: #D8E4F2;
+  letter-spacing: .07em;
+}
+
+/* Story and team sections use clean surfaces and consistent spacing. */
+#sobre {
+  background: #fff;
+}
+
+.story-photo > div:nth-child(2) {
+  padding: .65rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+.story-photo img { border-radius: 21px; }
+
+.section-padding h2 {
+  font-size: clamp(1.9rem, 3vw, 3.15rem);
+  line-height: 1.13;
+}
+
+.specialties-section {
+  background: linear-gradient(180deg, var(--brand-sky), #F8FBFF 72%);
+}
+
+.specialties-section h2,
+.contact-section h2 {
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  line-height: 1.13;
+}
+
+#specialty-filters .filter-btn {
+  min-height: 42px;
+  border-radius: 999px;
+  border-color: #C2D3E7;
+  font-weight: 600;
+}
+
+#specialty-filters .filter-btn:hover,
+#specialty-filters .filter-btn:focus-visible {
+  background: var(--brand-blue-deep);
+  border-color: var(--brand-blue-deep);
+  color: #fff;
+}
+
+#professionals-grid .card-premium {
+  min-width: 0;
+  border-radius: 20px;
+}
+
+#professionals-grid img {
+  border-color: rgba(30,111,217,.25);
+}
+
+/* Location and footer. */
+.contact-section { background: #fff; }
+
+.contact-section > .container > .grid {
+  border-radius: 26px;
+  border-color: var(--border-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-section iframe {
+  min-height: 420px;
+  filter: saturate(.8);
+}
+
+.site-footer {
+  background: #081D37;
+}
+
+.site-footer a:hover { color: #fff; }
+
+/* Dismissible floating appointment shortcut on small screens. */
+.mobile-whatsapp { display: none; }
+
+/* Scroll entrance animation helper. */
+.animate-on-scroll { opacity: 0; transform: translateY(16px); }
+
+.animate-slide-up { animation: slideUp .7s cubic-bezier(.2,.7,.2,1) forwards; }
 
 @keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animations Helper */
-.animate-on-scroll {
-  @apply opacity-0 translate-y-4;
+/* Lightbox and keyboard interaction polish. */
+#image-modal { backdrop-filter: blur(12px); }
+
+#modal-container {
+  border: 1px solid rgba(255,255,255,.75);
+  box-shadow: 0 34px 90px -38px rgba(0,0,0,.58);
 }
 
-.animate-slide-up {
-  @apply animate-slide-up;
+.clickable-image { cursor: pointer; transition: transform .4s ease; }
+.clickable-image:hover { transform: scale(1.045); }
+
+/* November Azul: remove by deleting data-campaign from <html>. */
+html[data-campaign="novembro-azul"] .campaign-logo-ribbon,
+html[data-campaign="novembro-azul"] .campaign-hero-ribbon,
+html[data-campaign="novembro-azul"] .campaign-seal { display: block; }
+
+html[data-campaign="novembro-azul"] .hero-section {
+  padding-top: calc(11rem + var(--campaign-banner-height));
+  background: linear-gradient(125deg, var(--campaign-hero-start) 0%, #123E78 54%, var(--campaign-hero-end) 100%);
+  color: #fff;
 }
 
-/* Lightbox Styles */
-.clickable-image {
-  @apply cursor-pointer transition-transform duration-500 hover:scale-110;
+html[data-campaign="novembro-azul"] .hero-section::before,
+html[data-campaign="novembro-azul"] .hero-section::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
 }
 
-#image-modal {
+html[data-campaign="novembro-azul"] .hero-section::before {
+  inset: 0;
+  opacity: .28;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(177,215,255,.5) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 72%, rgba(177,215,255,.45) 0 1px, transparent 2px),
+    radial-gradient(circle at 39% 18%, rgba(177,215,255,.4) 0 1.5px, transparent 2.5px),
+    radial-gradient(ellipse at 12% 105%, rgba(30,111,217,.55), transparent 48%);
+  background-size: 54px 54px, 76px 76px, 92px 92px, auto;
+}
+
+html[data-campaign="novembro-azul"] .hero-section::after {
+  right: -12%;
+  bottom: -90px;
+  width: 72%;
+  height: 260px;
+  border: 1px solid rgba(195,222,255,.18);
+  border-radius: 50%;
+  box-shadow: 0 -16px 0 -15px rgba(195,222,255,.22), 0 -32px 0 -31px rgba(195,222,255,.16);
+  transform: rotate(-8deg);
+}
+
+html[data-campaign="novembro-azul"] .hero-copy h1,
+html[data-campaign="novembro-azul"] .hero-copy > p,
+html[data-campaign="novembro-azul"] .hero-copy > div:first-of-type { color: #fff; }
+
+html[data-campaign="novembro-azul"] .hero-copy h1 span { color: #B9D8FF; }
+
+html[data-campaign="novembro-azul"] .hero-copy > p:not(.font-serif) { color: #E5F0FF; }
+
+html[data-campaign="novembro-azul"] .hero-copy > div:first-of-type {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.26);
+}
+
+html[data-campaign="novembro-azul"] .hero-copy .btn-primary {
+  background: var(--campaign-cta);
+  box-shadow: 0 0 0 5px rgba(126,185,255,.12), 0 14px 34px -16px rgba(0,0,0,.75);
+}
+
+html[data-campaign="novembro-azul"] .hero-copy .btn-primary:hover { background: #0B2545; }
+
+html[data-campaign="novembro-azul"] .hero-copy .btn-secondary {
+  color: #fff;
+  border-color: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.08);
+}
+
+html[data-campaign="novembro-azul"] .hero-copy .btn-secondary:hover {
+  color: var(--brand-navy);
+  background: #fff;
+}
+
+.campaign-hero-ribbon {
+  position: absolute;
+  z-index: 1;
+  top: 16%;
+  right: 7%;
+  width: clamp(42px, 7vw, 82px);
+  height: auto;
+  color: color-mix(in srgb, var(--campaign-ribbon) 38%, transparent);
+  filter: drop-shadow(0 6px 14px rgba(3,20,44,.2));
+  animation: ribbonFloat 5s ease-in-out infinite;
+}
+
+.campaign-seal {
+  position: absolute;
+  right: 0;
+  bottom: -4.5rem;
+  padding: .55rem .9rem;
+  color: #fff;
+  background: rgba(8,29,55,.52);
+  border: 1px solid rgba(218,236,255,.32);
+  border-radius: 999px;
+  box-shadow: 0 10px 24px -15px rgba(0,0,0,.65);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   backdrop-filter: blur(8px);
 }
 
-/* Chrome Metal Effect - High Contrast */
-.bg-chrome-metal {
-  background: linear-gradient(to bottom, #F2F2F2 0%, #B3B3B3 45%, #7D7D7D 70%, #2B2B2B 100%);
-  /* Text color will now inherit from body (Dark Navy) */
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);
-  /* Inner depth */
+@keyframes ribbonFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
 }
 
-/* Hide Scrollbar */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+@media (max-width: 767px) {
+  :root {
+    --header-height: 76px;
+    --header-compact-height: 66px;
+  }
+
+  .site-header > .container { width: 100%; padding-inline: 1rem; }
+
+  .brand-lockup img { max-height: 56px; max-width: 145px; }
+  .site-header.is-compact .brand-lockup img { max-height: 49px; }
+  .campaign-logo-ribbon { right: -17px; width: 13px; height: 18px; }
+
+  .campaign-banner {
+    min-height: var(--campaign-banner-height);
+    padding: .45rem 2.6rem .45rem .75rem;
+    font-size: .68rem;
+    line-height: 1.3;
+  }
+
+  .campaign-banner__message { gap: .35rem; }
+  .campaign-ribbon { width: 16px; height: 21px; }
+  .campaign-banner__close { right: .5rem; width: 28px; height: 28px; }
+
+  .hero-section { min-height: auto; }
+  html[data-campaign="novembro-azul"] .hero-section {
+    padding-top: calc(7.25rem + var(--campaign-banner-height));
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-section > .container { min-height: auto; gap: 2rem; }
+  .hero-copy h1 { max-width: 15ch; font-size: clamp(2.1rem, 8vw, 3.3rem); }
+  .hero-copy > p:not(.font-serif) { font-size: 1.02rem; line-height: 1.65; }
+  .hero-copy .flex.flex-col { gap: .75rem; }
+  .hero-copy .btn-primary, .hero-copy .btn-secondary { width: 100%; }
+  .campaign-hero-ribbon { top: 10%; right: 7%; width: 38px; opacity: .62; }
+  .campaign-seal { right: .25rem; bottom: -2.8rem; font-size: .62rem; }
+  .hero-image-shell img { height: clamp(270px, 78vw, 390px); }
+
+  .trust-band .container { width: 100%; gap: .75rem; }
+  .trust-pillar { min-height: 116px; padding: 1.2rem .8rem; border-radius: 18px; }
+  .trust-pillar h3 { font-size: clamp(1.25rem, 5.4vw, 1.8rem); }
+  .trust-pillar p { font-size: .65rem; line-height: 1.4; letter-spacing: .035em; }
+
+  #professionals-grid { gap: .75rem; }
+  #professionals-grid .card-premium { padding: .9rem .55rem; }
+  #professionals-grid .card-premium img { width: 76px; height: 76px; }
+
+  .contact-section iframe { min-height: 320px; }
+  .mobile-whatsapp {
+    position: fixed;
+    z-index: 45;
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    color: #fff;
+    background: #146C43;
+    border: 3px solid rgba(255,255,255,.92);
+    border-radius: 50%;
+    box-shadow: 0 12px 30px -12px rgba(0,0,0,.5);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .mobile-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -14px rgba(0,0,0,.55); }
+  .mobile-whatsapp svg { width: 27px; height: 27px; }
+
+  #image-modal { padding: .75rem; }
+  #modal-container { max-height: 94dvh; border-radius: 20px; }
 }
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+@media (min-width: 768px) {
+  .campaign-seal { right: -1.5rem; bottom: -5rem; }
+}
+
+@media (min-width: 1280px) {
+  .hero-section { padding-block: clamp(7rem, 10vw, 9rem); }
+}
+
+/* Responsive comfort and reduced motion (WCAG 2.2 AA). */
+@media (max-width: 359px) {
+  .campaign-banner { font-size: .62rem; }
+  .brand-lockup img { max-width: 125px; }
+  #professionals-grid .card-premium img { width: 68px; height: 68px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-on-scroll { opacity: 1 !important; transform: none !important; }
+}
+
+/* Keep focus indicators visible even on controls with utility reset classes. */
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px #fff;
 }
